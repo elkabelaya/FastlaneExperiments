@@ -1,0 +1,92 @@
+fastlane_require 'dotenv'
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do
+    xcode_select("/Applications/Xcode-beta_14.app") #Version 14.0 beta (14A5228q)
+  end
+
+  desc "Run tests"
+  lane :test do
+      scan(
+      project: "ToDoList.xcodeproj",
+      scheme: "ToDoListTests",
+      device: "iPhone 12",
+      code_coverage: "true",
+      derived_data_path: "./Build",
+      buildlog_path: "./Build",
+      output_directory: "./TestResults",
+    )
+  end
+
+  desc "Take screenShots"
+  lane :screenshots do
+    capture_ios_screenshots()
+    #frame_screenshots(silver: true,path: "/Screenshots") не работает на моей машине
+  end
+
+  desc "Increment build number"
+  lane :increment do
+    increment_build_number()
+  end
+
+  desc "Run SwiftLint"
+  lane :lint do
+    swiftlint(
+      mode: :lint,
+      raise_if_swiftlint_error: true
+    )
+  end
+
+  def notify(message)
+    telegram(
+      token: ENV['TG_BOT_TOKEN'],
+      chat_id: ENV['TG_CHAT_ID'],
+      text: message,
+    )
+  end
+
+  def deliver(path)
+    telegram(
+      token: ENV['TG_BOT_TOKEN'],
+      chat_id: ENV['TG_CHAT_ID'],
+      text:"Version for Simulator iOS13",
+      file: path,
+      mime_type: "application/octet-stream"
+    )
+  end
+
+  lane :distribute_test_app do
+    archive_path = gym(
+      project: "ToDoList.xcodeproj",
+      scheme: "ToDoList",
+       skip_package_ipa: true,
+       destination: "platform=iOS Simulator,name=iPhone 13",
+       configuration: "Debug",
+       archive_path: "Build/ToDoList.xcarchive",
+       clean: true
+     )
+     zip_path = "ToDoList.app.zip"
+     zip(
+       path: archive_path + "/Products/Applications/ToDoList.app",
+       output_path: zip_path
+     )
+     deliver(zip_path)
+  end
+
+  desc "Prepere beta version"
+  lane :build_beta do
+    lint
+    test
+    screenshots
+    increment = increment_build_number()
+    version = get_version_number()
+    distribute_test_app
+    notify("Released: " + version + ", build: " + increment)
+  end
+
+  error do |lane, exception|
+    notify(exception.message)
+  end
+end

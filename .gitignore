@@ -1,0 +1,6 @@
+Build/
+.env.*
+*.xcarchive
+*.app.zip
+*/fastlane/report.xml
+*/fastlane/README.md

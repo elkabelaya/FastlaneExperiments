@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ToDoListTests.xctest' tests='77' failures='0'>
+  <testsuite name='ToDoListTests.AddTaskViewModelTests' tests='5' failures='0'>
+    <testcase classname='ToDoListTests.AddTaskViewModelTests' name='testGetTask' time='0.006'/>
+    <testcase classname='ToDoListTests.AddTaskViewModelTests' name='testIsValid_false' time='0.042'/>
+    <testcase classname='ToDoListTests.AddTaskViewModelTests' name='testIsValid_falseOnInit' time='0.004'/>
+    <testcase classname='ToDoListTests.AddTaskViewModelTests' name='testIsValid_true' time='0.006'/>
+    <testcase classname='ToDoListTests.AddTaskViewModelTests' name='testTaskStatusName_onChangeBoolStatus' time='0.006'/>
+  </testsuite>
+  <testsuite name='ToDoListTests.AddTaskViewTests' tests='10' failures='0'>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_fire' time='0.403'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_hasAllFields' time='0.309'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_high' time='0.269'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_longDescriptipon' time='0.288'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_longName' time='0.303'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_longNameLongDescriptipon' time='0.301'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_low' time='0.307'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_medium' time='0.317'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_noDescription' time='0.327'/>
+    <testcase classname='ToDoListTests.AddTaskViewTests' name='testTaskDetailView_noName' time='0.334'/>
+  </testsuite>
+  <testsuite name='ToDoListTests.TaskDetailViewModelTests' tests='13' failures='0'>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testCancel_ifChanged' time='0.004'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testCancel_ifNotChanged' time='0.003'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testEdit_afterCall' time='0.003'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testEdit_beforeCall' time='0.004'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testEditedTask_ifChanged' time='0.004'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testEditedTask_ifNotChanged' time='0.004'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testInit_nameDescriptionPrioriy' time='0.004'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testInit_satusDone' time='0.003'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testInit_satusToBeDone' time='0.003'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testIsValid_false' time='0.019'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testIsValid_true' time='0.006'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testTaskStatusName_onChangeBoolStatus' time='0.008'/>
+    <testcase classname='ToDoListTests.TaskDetailViewModelTests' name='testTaskStatusName_onInit' time='0.004'/>
+  </testsuite>
+  <testsuite name='ToDoListTests.TaskDetailViewTests' tests='24' failures='0'>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_doneEditable' time='0.513'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_doneNotEditable' time='0.344'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_fireEditable' time='0.506'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_fireNotEditable' time='0.355'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_hasAllFieldsEditable' time='0.495'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_hasAllFieldsNotEditable' time='0.405'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_highEditable' time='0.552'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_highNotEditable' time='0.429'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_longDescriptionEditable' time='0.579'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_longDescriptionNotEditable' time='0.428'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_longNameEditable' time='0.591'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_longNameNotEditable' time='0.487'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_lowEditable' time='0.661'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_lowNotEditable' time='0.490'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_mediumEditable' time='0.738'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_mediumNotEditable' time='0.564'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_noDescriptionEditable' time='0.748'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_noDescriptionNotEditable' time='0.601'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_noNameEditable' time='0.948'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_noNameNoDescriptionEditable' time='1.109'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_noNameNoDescriptionNotEditable' time='1.066'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_noNameNotEditable' time='1.203'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_toBeDoneEditable' time='1.836'/>
+    <testcase classname='ToDoListTests.TaskDetailViewTests' name='testTaskDetailView_toBeDoneNotEditable' time='1.405'/>
+  </testsuite>
+  <testsuite name='ToDoListTests.ToDoListTaskViewTests' tests='14' failures='0'>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_emptyDescription' time='0.198'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_emptyName' time='0.167'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_emptyNameEmptyDescription' time='0.150'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_fireDone' time='0.216'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_fireToBeDone' time='0.167'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_highDone' time='0.166'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_highToBeDone' time='0.151'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_longDescription' time='0.180'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_longName' time='0.182'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_longNameLongDescription' time='0.186'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_lowDone' time='0.200'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_lowToBeDone' time='0.167'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_mediumDone' time='0.196'/>
+    <testcase classname='ToDoListTests.ToDoListTaskViewTests' name='testToDoListTaskView_mediumToBeDone' time='0.171'/>
+  </testsuite>
+  <testsuite name='ToDoListTests.ToDoListViewModelTests' tests='4' failures='0'>
+    <testcase classname='ToDoListTests.ToDoListViewModelTests' name='testAddTask_calledRepository' time='0.017'/>
+    <testcase classname='ToDoListTests.ToDoListViewModelTests' name='testRemoveTask_calledRepository' time='0.016'/>
+    <testcase classname='ToDoListTests.ToDoListViewModelTests' name='testTasks_updateFromRepository' time='0.203'/>
+    <testcase classname='ToDoListTests.ToDoListViewModelTests' name='testUpdateTask_calledRepository' time='0.005'/>
+  </testsuite>
+  <testsuite name='ToDoListTests.ToDoListViewTests' tests='3' failures='0'>
+    <testcase classname='ToDoListTests.ToDoListViewTests' name='testToDoListView_Empty' time='1.482'/>
+    <testcase classname='ToDoListTests.ToDoListViewTests' name='testToDoListView_LargeList' time='2.839'/>
+    <testcase classname='ToDoListTests.ToDoListViewTests' name='testToDoListView_OneItem' time='1.471'/>
+  </testsuite>
+  <testsuite name='ToDoListTests.UserDefaultsRepositoryTests' tests='4' failures='0'>
+    <testcase classname='ToDoListTests.UserDefaultsRepositoryTests' name='testAddTask' time='0.034'/>
+    <testcase classname='ToDoListTests.UserDefaultsRepositoryTests' name='testGetTasks_betweenInstances' time='0.044'/>
+    <testcase classname='ToDoListTests.UserDefaultsRepositoryTests' name='testRemoveTask' time='0.035'/>
+    <testcase classname='ToDoListTests.UserDefaultsRepositoryTests' name='testUpdateTask' time='0.046'/>
+  </testsuite>
+</testsuites>

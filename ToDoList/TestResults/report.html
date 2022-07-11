@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Test Results | xcpretty</title>
+    <style type="text/css">
+      body { font-family:Avenir Next, Helvetica Neue, sans-serif; color: #4A4A4A; background-color: #F0F3FB; margin:0;}
+      h1 { font-weight: normal; font-size: 24px; margin: 10px 0 0 0;}
+      h3 { font-weight: normal; margin: 2px; font-size: 1.1em;}
+      header { position: fixed;width: 100%;background: rgba(249, 254, 255, 0.9);margin: 0;padding: 10px;}
+      header:before, header:after { content:""; display:table;}
+      header:after { clear:both;}
+      a:link { color: #A1D761;}
+      footer { clear: both;position: relative;z-index: 10;height: 40px;margin-top: -10px; margin-left:30px; font-size:12px;}
+      table { width:100%; border-collapse: collapse;}
+      tr td:first-child { width:7%}
+      .left { float: left; margin-left:30px;}
+      .right { float: right; margin-right: 40px; margin-top: 0; margin-bottom:0;}
+      .test-suite { margin: 0 0 30px 0;}
+      .test-suite > .heading { font-family:Menlo, Monaco, monospace; font-weight: bold; border-color: #A1D761; background-color: #B8E986; border-width: 1px;}
+      .test-suite.failing > .heading { border-color: #C84F5E; background-color: #E58591;}
+      .test-suite > .heading > .title { margin-top: 4px; margin-left: 10px;}
+      .tests { overflow: scroll;margin: 0 30px 0 60px;}
+      .test, .test-suite > .heading { height: 30px; overflow: hidden; margin: 0 30px;}
+      .test, .test-suite > .heading { border-width: 1px; border-collapse: collapse; border-style: solid; }
+      .test { margin-left: 30px; border-top:none;}
+      .test.failing { border-color: #C84F5E; background-color: #F4DDE0;}
+      .test.passing { border-color: #A1D761;}
+      .test.failing { background-color: #E7A1AA;}
+      .test.passing { background-color: #CAF59F;}
+      .test.failing.odd { background-color: #EEC7CC;}
+      .test.passing.odd { background-color: #E5FBCF;}
+      .details.failing { background-color: #F4DDE0; border: 1px solid #C84F5E;}
+      .details.passing { background-color: #E5F4DC; border: 1px solid #A1D761;}
+      .test .test-detail:last-child { padding-bottom: 8px;}
+      .test .title { float: left; font-size: 0.9em; margin-top: 8px; font-family: Menlo, Monaco, monospace;}
+      .test .time { float: left;margin: 4px 10px 0 20px;}
+      .test-detail { font-family:Menlo, Monaco, monospace; font-size: 0.9em; margin: 5px 0 5px 0px;}
+      .screenshots { height: auto; overflow: hidden; padding: 4px 4px 0 4px; background-color: #B8E986; border: #A1D761; border-width: 0 1px; border-style: solid; }
+      .screenshots.failing { border-color: #C84F5E; background-color: #E58591; }
+      .screenshot { max-height: 60px; float: left; transition: max-height 0.2s; margin: 0 4px 4px 0 }
+      .screenshot.selected { max-height: 568px; }
+      #test-suites { display: inline-block; width: 100%;margin-top:100px;}
+      #segment-bar { margin-top: 10px;margin-left: 14px;float:right;}
+      #segment-bar a:first-child { border-radius: 9px 0 0 9px; border-right: none;}
+      #segment-bar a:last-child { border-radius: 0 9px 9px 0; border-left: none;}
+      #segment-bar > a { color: #565656; border: 2px solid  #7B7B7B; width: 80px; font-weight: bold; display:inline-block;text-align:center; font-weight: normal;}
+      #segment-bar > a.selected { background-color: #979797; color: #F0F3FB;}
+      #counters { float: left;margin: 10px;text-align: right;}
+      #counters h2 { font-size: 16px; font-family: Avenir, sans-serif; font-weight: lighter; display:inline;}
+      #counters .number { font-size: 20px;}
+      #fail-count { color: #D0021B; margin-left:10px;}
+      @media (max-width: 640px) {
+        h1, #counters, #segment-bar { margin: 5px auto; text-align:center;}
+        header, #segment-bar { width: 100%; position: relative; background:none;}
+        .left, .right { float:none; margin:0;}
+        #test-suites { margin-top: 0;}
+        #counters { float:none;}
+      }
+    </style>
+    <script type="text/javascript">
+      var hide = function(element) { element.style.display = 'none';}
+      var show = function(element) { element.style.display = '';}
+      var isHidden = function(element) { return element.style.display == 'none';}
+      var isSelected = function(element) { return element.classList.contains("selected");}
+      var deselect = function(element) { return element.classList.remove("selected");}
+      var select = function(element) { return element.classList.add("selected");}
+      var toggle = function(element) { isHidden(element) ? show(element) : hide(element);};
+      var toggleTests = function(heading) { toggle(heading.parentNode.children[1]);};
+      var toggleDetails = function(detailClass) {
+        var details = document.querySelectorAll('.' + detailClass);
+        for (var i = details.length - 1; i >= 0; i--) { toggle(details[i]);};
+      };
+      var hideAll = function(collection) {
+        for (var i = collection.length - 1; i >= 0; i--) { hide(collection[i]); };
+      }
+      var showAll = function(collection) {
+        for (var i = collection.length - 1; i >= 0; i--) { show(collection[i]); };
+      }
+      var selectSegment = function(segment) {
+        if (isSelected(segment)) return;
+        var segments = document.querySelectorAll('#segment-bar > a');
+        for (var i = segments.length - 1; i >= 0; i--) { deselect(segments[i]);};
+        select(segment);
+        if (segment.id == "all-segment") {
+          showAll(document.querySelectorAll('.test-suite'));
+          showAll(document.querySelectorAll('.test'));
+        } else if (segment.id == "failing-segment") {
+          hideAll(document.querySelectorAll('.test.passing'));
+          showAll(document.querySelectorAll('.test.failing'));
+          hideAll(document.querySelectorAll('.test-suite.passing'));
+          showAll(document.querySelectorAll('.test-suite.failing'));
+        } else if (segment.id == "passing-segment") {
+          hideAll(document.querySelectorAll('.test.failing'));
+          showAll(document.querySelectorAll('.test.passing'));
+          hideAll(document.querySelectorAll('.test-suite.failing'));
+          showAll(document.querySelectorAll('.test-suite.passing'));
+        }
+      }
+      var toggleScreenshot = function(suiteName, index) {
+        var screenshot = document.getElementById("screenshot-" + suiteName + "-" + index);
+        isSelected(screenshot) ? deselect(screenshot) : select(screenshot);
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <section class="left">
+        <h1>Test Results</h1>
+      </section>
+      <section class="right">
+        <section id="counters">
+          <h2 id="test-count"><span class="number">77</span> tests</h2>
+          
+        </section>
+        <section id="segment-bar">
+          <a id="all-segment" onclick="selectSegment(this);" class="selected">All</a><a id="failing-segment" onclick="selectSegment(this);">Failing</a><a id="passing-segment" onclick="selectSegment(this);">Passing</a>
+        </section>
+      </section>
+    </header>
+    <section id="test-suites">
+      
+        
+        <section class="test-suite passing" id="ToDoListTests.AddTaskViewModelTests">
+          <section class="heading" onclick="toggleTests(this);">
+            <h3 class="title">ToDoListTests.AddTaskViewModelTests</h3>
+          </section>
+          <section class="tests">
+            <table>
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testGetTask');">
+                <td>
+                  
+                    <h3 class="time">0.006s</h3>
+                  
+                </td>
+                <td><h3 class="title">testGetTask</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testIsValid_false');">
+                <td>
+                  
+                    <h3 class="time">0.042s</h3>
+                  
+                </td>
+                <td><h3 class="title">testIsValid_false</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testIsValid_falseOnInit');">
+                <td>
+                  
+                    <h3 class="time">0.004s</h3>
+                  
+                </td>
+                <td><h3 class="title">testIsValid_falseOnInit</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testIsValid_true');">
+                <td>
+                  
+                    <h3 class="time">0.006s</h3>
+                  
+                </td>
+                <td><h3 class="title">testIsValid_true</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskStatusName_onChangeBoolStatus');">
+                <td>
+                  
+                    <h3 class="time">0.006s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskStatusName_onChangeBoolStatus</h3></td>
+              </tr>
+              
+            
+            </table>
+          </section>
+        </section>
+      
+        
+        <section class="test-suite passing" id="ToDoListTests.AddTaskViewTests">
+          <section class="heading" onclick="toggleTests(this);">
+            <h3 class="title">ToDoListTests.AddTaskViewTests</h3>
+          </section>
+          <section class="tests">
+            <table>
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_fire');">
+                <td>
+                  
+                    <h3 class="time">0.403s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_fire</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_hasAllFields');">
+                <td>
+                  
+                    <h3 class="time">0.309s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_hasAllFields</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_high');">
+                <td>
+                  
+                    <h3 class="time">0.269s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_high</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_longDescriptipon');">
+                <td>
+                  
+                    <h3 class="time">0.288s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_longDescriptipon</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_longName');">
+                <td>
+                  
+                    <h3 class="time">0.303s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_longName</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_longNameLongDescriptipon');">
+                <td>
+                  
+                    <h3 class="time">0.301s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_longNameLongDescriptipon</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_low');">
+                <td>
+                  
+                    <h3 class="time">0.307s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_low</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_medium');">
+                <td>
+                  
+                    <h3 class="time">0.317s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_medium</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_noDescription');">
+                <td>
+                  
+                    <h3 class="time">0.327s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_noDescription</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_noName');">
+                <td>
+                  
+                    <h3 class="time">0.334s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_noName</h3></td>
+              </tr>
+              
+            
+            </table>
+          </section>
+        </section>
+      
+        
+        <section class="test-suite passing" id="ToDoListTests.TaskDetailViewModelTests">
+          <section class="heading" onclick="toggleTests(this);">
+            <h3 class="title">ToDoListTests.TaskDetailViewModelTests</h3>
+          </section>
+          <section class="tests">
+            <table>
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testCancel_ifChanged');">
+                <td>
+                  
+                    <h3 class="time">0.004s</h3>
+                  
+                </td>
+                <td><h3 class="title">testCancel_ifChanged</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testCancel_ifNotChanged');">
+                <td>
+                  
+                    <h3 class="time">0.003s</h3>
+                  
+                </td>
+                <td><h3 class="title">testCancel_ifNotChanged</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testEdit_afterCall');">
+                <td>
+                  
+                    <h3 class="time">0.003s</h3>
+                  
+                </td>
+                <td><h3 class="title">testEdit_afterCall</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testEdit_beforeCall');">
+                <td>
+                  
+                    <h3 class="time">0.004s</h3>
+                  
+                </td>
+                <td><h3 class="title">testEdit_beforeCall</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testEditedTask_ifChanged');">
+                <td>
+                  
+                    <h3 class="time">0.004s</h3>
+                  
+                </td>
+                <td><h3 class="title">testEditedTask_ifChanged</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testEditedTask_ifNotChanged');">
+                <td>
+                  
+                    <h3 class="time">0.004s</h3>
+                  
+                </td>
+                <td><h3 class="title">testEditedTask_ifNotChanged</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testInit_nameDescriptionPrioriy');">
+                <td>
+                  
+                    <h3 class="time">0.004s</h3>
+                  
+                </td>
+                <td><h3 class="title">testInit_nameDescriptionPrioriy</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testInit_satusDone');">
+                <td>
+                  
+                    <h3 class="time">0.003s</h3>
+                  
+                </td>
+                <td><h3 class="title">testInit_satusDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testInit_satusToBeDone');">
+                <td>
+                  
+                    <h3 class="time">0.003s</h3>
+                  
+                </td>
+                <td><h3 class="title">testInit_satusToBeDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testIsValid_false');">
+                <td>
+                  
+                    <h3 class="time">0.019s</h3>
+                  
+                </td>
+                <td><h3 class="title">testIsValid_false</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testIsValid_true');">
+                <td>
+                  
+                    <h3 class="time">0.006s</h3>
+                  
+                </td>
+                <td><h3 class="title">testIsValid_true</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskStatusName_onChangeBoolStatus');">
+                <td>
+                  
+                    <h3 class="time">0.008s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskStatusName_onChangeBoolStatus</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskStatusName_onInit');">
+                <td>
+                  
+                    <h3 class="time">0.004s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskStatusName_onInit</h3></td>
+              </tr>
+              
+            
+            </table>
+          </section>
+        </section>
+      
+        
+        <section class="test-suite passing" id="ToDoListTests.TaskDetailViewTests">
+          <section class="heading" onclick="toggleTests(this);">
+            <h3 class="title">ToDoListTests.TaskDetailViewTests</h3>
+          </section>
+          <section class="tests">
+            <table>
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_doneEditable');">
+                <td>
+                  
+                    <h3 class="time">0.513s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_doneEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_doneNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.344s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_doneNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_fireEditable');">
+                <td>
+                  
+                    <h3 class="time">0.506s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_fireEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_fireNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.355s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_fireNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_hasAllFieldsEditable');">
+                <td>
+                  
+                    <h3 class="time">0.495s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_hasAllFieldsEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_hasAllFieldsNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.405s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_hasAllFieldsNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_highEditable');">
+                <td>
+                  
+                    <h3 class="time">0.552s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_highEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_highNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.429s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_highNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_longDescriptionEditable');">
+                <td>
+                  
+                    <h3 class="time">0.579s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_longDescriptionEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_longDescriptionNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.428s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_longDescriptionNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_longNameEditable');">
+                <td>
+                  
+                    <h3 class="time">0.591s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_longNameEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_longNameNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.487s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_longNameNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_lowEditable');">
+                <td>
+                  
+                    <h3 class="time">0.661s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_lowEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_lowNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.490s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_lowNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_mediumEditable');">
+                <td>
+                  
+                    <h3 class="time">0.738s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_mediumEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_mediumNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.564s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_mediumNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_noDescriptionEditable');">
+                <td>
+                  
+                    <h3 class="time">0.748s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_noDescriptionEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_noDescriptionNotEditable');">
+                <td>
+                  
+                    <h3 class="time">0.601s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_noDescriptionNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_noNameEditable');">
+                <td>
+                  
+                    <h3 class="time">0.948s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_noNameEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_noNameNoDescriptionEditable');">
+                <td>
+                  
+                    <h3 class="time">1.109s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_noNameNoDescriptionEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_noNameNoDescriptionNotEditable');">
+                <td>
+                  
+                    <h3 class="time">1.066s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_noNameNoDescriptionNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_noNameNotEditable');">
+                <td>
+                  
+                    <h3 class="time">1.203s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_noNameNotEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTaskDetailView_toBeDoneEditable');">
+                <td>
+                  
+                    <h3 class="time">1.836s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_toBeDoneEditable</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testTaskDetailView_toBeDoneNotEditable');">
+                <td>
+                  
+                    <h3 class="time">1.405s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTaskDetailView_toBeDoneNotEditable</h3></td>
+              </tr>
+              
+            
+            </table>
+          </section>
+        </section>
+      
+        
+        <section class="test-suite passing" id="ToDoListTests.ToDoListTaskViewTests">
+          <section class="heading" onclick="toggleTests(this);">
+            <h3 class="title">ToDoListTests.ToDoListTaskViewTests</h3>
+          </section>
+          <section class="tests">
+            <table>
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListTaskView_emptyDescription');">
+                <td>
+                  
+                    <h3 class="time">0.198s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_emptyDescription</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testToDoListTaskView_emptyName');">
+                <td>
+                  
+                    <h3 class="time">0.167s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_emptyName</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListTaskView_emptyNameEmptyDescription');">
+                <td>
+                  
+                    <h3 class="time">0.150s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_emptyNameEmptyDescription</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testToDoListTaskView_fireDone');">
+                <td>
+                  
+                    <h3 class="time">0.216s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_fireDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListTaskView_fireToBeDone');">
+                <td>
+                  
+                    <h3 class="time">0.167s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_fireToBeDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testToDoListTaskView_highDone');">
+                <td>
+                  
+                    <h3 class="time">0.166s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_highDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListTaskView_highToBeDone');">
+                <td>
+                  
+                    <h3 class="time">0.151s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_highToBeDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testToDoListTaskView_longDescription');">
+                <td>
+                  
+                    <h3 class="time">0.180s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_longDescription</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListTaskView_longName');">
+                <td>
+                  
+                    <h3 class="time">0.182s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_longName</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testToDoListTaskView_longNameLongDescription');">
+                <td>
+                  
+                    <h3 class="time">0.186s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_longNameLongDescription</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListTaskView_lowDone');">
+                <td>
+                  
+                    <h3 class="time">0.200s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_lowDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testToDoListTaskView_lowToBeDone');">
+                <td>
+                  
+                    <h3 class="time">0.167s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_lowToBeDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListTaskView_mediumDone');">
+                <td>
+                  
+                    <h3 class="time">0.196s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_mediumDone</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testToDoListTaskView_mediumToBeDone');">
+                <td>
+                  
+                    <h3 class="time">0.171s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListTaskView_mediumToBeDone</h3></td>
+              </tr>
+              
+            
+            </table>
+          </section>
+        </section>
+      
+        
+        <section class="test-suite passing" id="ToDoListTests.ToDoListViewModelTests">
+          <section class="heading" onclick="toggleTests(this);">
+            <h3 class="title">ToDoListTests.ToDoListViewModelTests</h3>
+          </section>
+          <section class="tests">
+            <table>
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testAddTask_calledRepository');">
+                <td>
+                  
+                    <h3 class="time">0.017s</h3>
+                  
+                </td>
+                <td><h3 class="title">testAddTask_calledRepository</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testRemoveTask_calledRepository');">
+                <td>
+                  
+                    <h3 class="time">0.016s</h3>
+                  
+                </td>
+                <td><h3 class="title">testRemoveTask_calledRepository</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testTasks_updateFromRepository');">
+                <td>
+                  
+                    <h3 class="time">0.203s</h3>
+                  
+                </td>
+                <td><h3 class="title">testTasks_updateFromRepository</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testUpdateTask_calledRepository');">
+                <td>
+                  
+                    <h3 class="time">0.005s</h3>
+                  
+                </td>
+                <td><h3 class="title">testUpdateTask_calledRepository</h3></td>
+              </tr>
+              
+            
+            </table>
+          </section>
+        </section>
+      
+        
+        <section class="test-suite passing" id="ToDoListTests.ToDoListViewTests">
+          <section class="heading" onclick="toggleTests(this);">
+            <h3 class="title">ToDoListTests.ToDoListViewTests</h3>
+          </section>
+          <section class="tests">
+            <table>
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListView_Empty');">
+                <td>
+                  
+                    <h3 class="time">1.482s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListView_Empty</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testToDoListView_LargeList');">
+                <td>
+                  
+                    <h3 class="time">2.839s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListView_LargeList</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testToDoListView_OneItem');">
+                <td>
+                  
+                    <h3 class="time">1.471s</h3>
+                  
+                </td>
+                <td><h3 class="title">testToDoListView_OneItem</h3></td>
+              </tr>
+              
+            
+            </table>
+          </section>
+        </section>
+      
+        
+        <section class="test-suite passing" id="ToDoListTests.UserDefaultsRepositoryTests">
+          <section class="heading" onclick="toggleTests(this);">
+            <h3 class="title">ToDoListTests.UserDefaultsRepositoryTests</h3>
+          </section>
+          <section class="tests">
+            <table>
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testAddTask');">
+                <td>
+                  
+                    <h3 class="time">0.034s</h3>
+                  
+                </td>
+                <td><h3 class="title">testAddTask</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testGetTasks_betweenInstances');">
+                <td>
+                  
+                    <h3 class="time">0.044s</h3>
+                  
+                </td>
+                <td><h3 class="title">testGetTasks_betweenInstances</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing "  onclick="toggleDetails('testRemoveTask');">
+                <td>
+                  
+                    <h3 class="time">0.035s</h3>
+                  
+                </td>
+                <td><h3 class="title">testRemoveTask</h3></td>
+              </tr>
+              
+            
+              
+              <tr class="test passing odd"  onclick="toggleDetails('testUpdateTask');">
+                <td>
+                  
+                    <h3 class="time">0.046s</h3>
+                  
+                </td>
+                <td><h3 class="title">testUpdateTask</h3></td>
+              </tr>
+              
+            
+            </table>
+          </section>
+        </section>
+      
+    </section>
+    <footer>Report generated with <a href="https://github.com/supermarin/xcpretty">xcpretty</a></footer>
+  </body>
+</html>

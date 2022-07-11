@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B352EE76-F7AD-41F8-918B-459B5C798EF5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97BC4445-2B30-4C92-B88C-D854222F174B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/ToDoListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFFA86D6-62BE-4E5E-90A2-45BC482B3C40"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/ToDoListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94D6B0EF-AE11-41B4-909F-B419CB6F0BD5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Repository/MockRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "addTask(task:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9E6F5AD-B84E-42C4-84D2-895A956B6EF8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/TaskDetail/TaskDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "buttons()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72A4B114-9661-4D25-833A-1BC83B779306"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/ToDoList/ToDoListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A2384D6-257D-4849-9C64-48EF2C62D191"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "addTask(task:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "91DF432C-DA39-4240-AEE4-603B78DE2828"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "removeTask(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34850E7D-BEB5-47D9-B22A-FB4984BC56BD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "updateTask(task:newTask:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE854DAC-70FF-456A-91FC-1BA5E954E4ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/TaskDetail/TaskDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "TaskDetailView"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2824E0F3-874E-4595-8F51-64CADCEA8475"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Repository/UserDefaultsRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "removeTask(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B1303D2-9F01-475C-B4CD-581B1516AE1E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/ToDoList/ToDoListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "init(viewModel:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07296FF4-541A-490C-A78B-443B2882ED6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/AddTask/AddTaskViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "07296FF4-541A-490C-A78B-443B2882ED6A - fd55d09359ffa43c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in ToDoList.AddTaskViewModel.init() -&gt; ToDoList.AddTaskViewModel"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Screens/AddTask/AddTaskViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "101">
+               </Location>
+               <Location
+                  uuid = "07296FF4-541A-490C-A78B-443B2882ED6A - fd55d09359ffa43c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in ToDoList.AddTaskViewModel.init() -&gt; ToDoList.AddTaskViewModel"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Screens/AddTask/AddTaskViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "161">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34939068-99F5-4F1A-B6A9-24C12804C8BA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "init(repository:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "34939068-99F5-4F1A-B6A9-24C12804C8BA - 57f8aec30fd88b29"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;ToDoList.Task&gt;) -&gt; () in ToDoList.ToDoListViewModel.init(repository: ToDoList.RepositoryProtocol) -&gt; ToDoList.ToDoListViewModel"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "81">
+               </Location>
+               <Location
+                  uuid = "34939068-99F5-4F1A-B6A9-24C12804C8BA - d79f3cbd832bf11a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;ToDoListTests.Task&gt;) -&gt; () in ToDoListTests.ToDoListViewModel.init(repository: ToDoListTests.RepositoryProtocol) -&gt; ToDoListTests.ToDoListViewModel"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "81">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7CD37082-D0FA-4199-8E4C-D79DEDD14B1D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "testTasks_updateFromRepository()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7CD37082-D0FA-4199-8E4C-D79DEDD14B1D - 780b73e116511e68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.ToDoListViewModelTests.testTasks_updateFromRepository() throws -&gt; ()"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "161">
+               </Location>
+               <Location
+                  uuid = "7CD37082-D0FA-4199-8E4C-D79DEDD14B1D - 780b73e116511f9f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.ToDoListViewModelTests.testTasks_updateFromRepository() throws -&gt; ()"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "652">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B183F406-ACF8-469A-8DAF-128D24857AF1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "init(repository:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B183F406-ACF8-469A-8DAF-128D24857AF1 - 5147be7b2049b7ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoList.ToDoListViewModel.init(repository: ToDoList.RepositoryProtocol) -&gt; ToDoList.ToDoListViewModel"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "486">
+               </Location>
+               <Location
+                  uuid = "B183F406-ACF8-469A-8DAF-128D24857AF1 - 81c141056d7b93df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.ToDoListViewModel.init(repository: ToDoListTests.RepositoryProtocol) -&gt; ToDoListTests.ToDoListViewModel"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Screens/ToDoList/ToDoListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "486">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0872E86B-FDD8-4736-9CEB-64239C09FC32"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "testTasks_updateFromRepository()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4134426-9395-4C86-94E3-5F7428DAF3DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "testTasks_updateFromRepository()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B4134426-9395-4C86-94E3-5F7428DAF3DE - 8a4aeda939bac66f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.ToDoListViewModelTests.testRemoveTask_calledRepository() throws -&gt; ()"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  uuid = "B4134426-9395-4C86-94E3-5F7428DAF3DE - 780b73e116511878"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.ToDoListViewModelTests.testTasks_updateFromRepository() throws -&gt; ()"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "889">
+               </Location>
+               <Location
+                  uuid = "B4134426-9395-4C86-94E3-5F7428DAF3DE - 780b73e116511878"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.ToDoListViewModelTests.testTasks_updateFromRepository() throws -&gt; ()"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "990">
+               </Location>
+               <Location
+                  uuid = "B4134426-9395-4C86-94E3-5F7428DAF3DE - 780b73e116511878"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.ToDoListViewModelTests.testTasks_updateFromRepository() throws -&gt; ()"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1138">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F2FA9B4-937F-4322-A71B-FD883B6D326E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "setUp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E44593B4-4DE9-4A45-863C-CD729D0BD5A7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListTests/unit/Screens/ToDoList/ToDoListViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "testTasks_updateFromRepository()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1610C2BF-3B60-4A24-82E2-25345CB2A300"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListTests/snapshot/SnapshotTestCase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "setUp()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "006A43B5-7871-4F08-BE08-4D6B666A4D6D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListTests/unit/Repository/UserDefaultsRepositoryTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "testUpdateTask()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "212D352E-0D49-4C86-AE7D-38E4E41B9BC4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoList/Repository/UserDefaultsRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "updateTask(task:newTask:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "212D352E-0D49-4C86-AE7D-38E4E41B9BC4 - e73d15b6c1b6875c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoList.UserDefaultsRepository.updateTask(task: ToDoList.Task, newTask: ToDoList.Task) -&gt; ()"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Repository/UserDefaultsRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "212D352E-0D49-4C86-AE7D-38E4E41B9BC4 - e73d15b6c1b6875c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoList.UserDefaultsRepository.updateTask(task: ToDoList.Task, newTask: ToDoList.Task) -&gt; ()"
+                  moduleName = "ToDoList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Repository/UserDefaultsRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "294">
+               </Location>
+               <Location
+                  uuid = "212D352E-0D49-4C86-AE7D-38E4E41B9BC4 - 9a0029b10700f45a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.UserDefaultsRepository.updateTask(task: ToDoListTests.Task, newTask: ToDoListTests.Task) -&gt; ()"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Repository/UserDefaultsRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "212D352E-0D49-4C86-AE7D-38E4E41B9BC4 - 9a0029b10700f45a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListTests.UserDefaultsRepository.updateTask(task: ToDoListTests.Task, newTask: ToDoListTests.Task) -&gt; ()"
+                  moduleName = "ToDoListTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-5/ToDoList/ToDoList/Repository/UserDefaultsRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "294">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "149AF02D-7C90-445C-97C1-D76E8407DB7B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListTests/unit/Repository/UserDefaultsRepositoryTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "testGetTasks_betweenInstances()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0665C82C-C5B8-49D5-86AF-598E7CF40FDC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListScreenshots/ToDoListScreenshots.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "testSnapshots()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F42B58E-963F-471F-B708-4C1611646307"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListScreenshots/ToDoListScreenshots.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "testSnapshots()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2617936-C389-4C80-A552-D4472D05ADE3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListScreenshots/ToDoListScreenshots.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "testSnapshots()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2617936-C389-4C80-A552-D4472D05ADE3 - 5bb0022f9ae3131d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListScreenshots.ToDoListScreenshots.setUp() -&gt; ()"
+                  moduleName = "ToDoListScreenshots"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-7/ToDoList/ToDoListScreenshots/ToDoListScreenshots.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "678">
+               </Location>
+               <Location
+                  uuid = "F2617936-C389-4C80-A552-D4472D05ADE3 - d8e44aff5ffdd87"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListScreenshots.ToDoListScreenshots.testSnapshots() -&gt; ()"
+                  moduleName = "ToDoListScreenshots"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-7/ToDoList/ToDoListScreenshots/ToDoListScreenshots.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "250">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "25AE4A8C-5756-46D8-9CF0-EC92BEFB29B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListScreenshots/ToDoListScreenshots.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "testSnapshots()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "25AE4A8C-5756-46D8-9CF0-EC92BEFB29B6 - 5bb0022f9ae31399"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListScreenshots.ToDoListScreenshots.setUp() -&gt; ()"
+                  moduleName = "ToDoListScreenshots"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-7/ToDoList/ToDoListScreenshots/ToDoListScreenshots.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  uuid = "25AE4A8C-5756-46D8-9CF0-EC92BEFB29B6 - d8e44aff5ffdd03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListScreenshots.ToDoListScreenshots.testSnapshots() -&gt; ()"
+                  moduleName = "ToDoListScreenshots"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-7/ToDoList/ToDoListScreenshots/ToDoListScreenshots.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "173">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B02E67E9-DD5B-49E1-B1DC-8D193092FE5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListScreenshots/ToDoListScreenshots.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "testSnapshots()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B02E67E9-DD5B-49E1-B1DC-8D193092FE5E - d8e44aff5ffdda6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListScreenshots.ToDoListScreenshots.testSnapshots() -&gt; ()"
+                  moduleName = "ToDoListScreenshots"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-7/ToDoList/ToDoListScreenshots/ToDoListScreenshots.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "454">
+               </Location>
+               <Location
+                  uuid = "B02E67E9-DD5B-49E1-B1DC-8D193092FE5E - d8e44aff5ffdda6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListScreenshots.ToDoListScreenshots.testSnapshots() -&gt; ()"
+                  moduleName = "ToDoListScreenshots"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkabelaya/homework-7/ToDoList/ToDoListScreenshots/ToDoListScreenshots.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "456">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF51510E-6F36-4FB9-9680-7FEDB7C5B4DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListScreenshots/ToDoListScreenshots.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "testSnapshots()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
